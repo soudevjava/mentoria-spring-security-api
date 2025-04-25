@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+<!-- CRIACAO DE TABELAS -->
+
+<changeSet id="CRIAR_TABELAS" author="ialuj" >
+    <sqlFile path="db/changelog/files/script-criacao-tabelas.sql" />
+</changeSet>
+
+<!-- INSERCAO DE DADOS -->
+
+<changeSet id="INSERIR_USUARIOS" author="ialuj" >
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(*)
+        FROM usuarios;
+      </sqlCheck>
+    </preConditions>
+    <sqlFile path="db/changelog/files/script-insert-usuarios.sql" />
+</changeSet>
+<changeSet id="INSERIR_PAPEIS" author="ialuj" >
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(*)
+        FROM papeis;
+      </sqlCheck>
+    </preConditions>
+    <sqlFile path="db/changelog/files/script-insert-papeis.sql" />
+</changeSet>
+<changeSet id="INSERIR_PERMISSOES" author="ialuj" >
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(*)
+        FROM permissoes;
+      </sqlCheck>
+    </preConditions>
+    <sqlFile path="db/changelog/files/script-insert-permissoes.sql" />
+</changeSet>
+<changeSet id="INSERIR_PAPEL_PERMISSOES" author="ialuj" >
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(*)
+        FROM papel_permissoes;
+      </sqlCheck>
+    </preConditions>
+    <sqlFile path="db/changelog/files/script-insert-papel-permissoes.sql" />
+</changeSet>
+<changeSet id="INSERIR_USUARIO_PAPEIS" author="ialuj" >
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(*)
+        FROM usuario_papeis;
+      </sqlCheck>
+    </preConditions>
+    <sqlFile path="db/changelog/files/script-insert-usuario-papeis.sql" />
+</changeSet>
+         
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+INSERT INTO permissoes (nome, data_de_criacao, estado)
+VALUES 
+  -- Usuários
+  ('USUARIO_CRIAR', NOW(), TRUE),
+  ('USUARIO_LISTAR', NOW(), TRUE),
+  ('USUARIO_ATUALIZAR', NOW(), TRUE),
+  ('USUARIO_REMOVER', NOW(), TRUE),
+
+  -- Papéis
+  ('PAPEL_CRIAR', NOW(), TRUE),
+  ('PAPEL_LISTAR', NOW(), TRUE),
+  ('PAPEL_ATUALIZAR', NOW(), TRUE),
+  ('PAPEL_REMOVER', NOW(), TRUE),
+
+  -- Permissões
+  ('PERMISSAO_CRIAR', NOW(), TRUE),
+  ('PERMISSAO_LISTAR', NOW(), TRUE),
+  ('PERMISSAO_ATUALIZAR', NOW(), TRUE),
+  ('PERMISSAO_REMOVER', NOW(), TRUE),
+
+  -- Atribuições
+  ('ATRIBUIR_PAPEL_A_USUARIO', NOW(), TRUE),
+  ('REMOVER_PAPEL_DE_USUARIO', NOW(), TRUE),
+  ('ATRIBUIR_PERMISSAO_A_PAPEL', NOW(), TRUE),
+  ('REMOVER_PERMISSAO_DE_PAPEL', NOW(), TRUE);
